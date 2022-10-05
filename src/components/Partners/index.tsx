@@ -1,15 +1,16 @@
 import { HStack, Image, VStack } from "@chakra-ui/react";
 import { Button } from "../Button";
 import { DescriptionCard } from "../DescriptionCard";
-import airbnb from "/public/images/airbnb.svg";
-import facebook from "/public/images/facebook.svg";
-import google from "/public/images/google.svg";
-import microsoft from "/public/images/microsoft.svg";
-import spotify from "/public/images/spotify.svg";
 
-const mockPartners = [google, microsoft, airbnb, facebook, spotify];
+export interface PartnerProps {
+  id: number;
+  partner: string;
+}
 
-export function Partners() {
+type PartnersProps = {
+  item: PartnerProps[];
+};
+export function Partners({ item }: PartnersProps) {
   return (
     <VStack gap={55}>
       <DescriptionCard
@@ -25,8 +26,8 @@ export function Partners() {
         flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "nowrap"]}
         flex={1}
       >
-        {mockPartners.map((item) => (
-          <Image src={item} key={item} />
+        {item.map((item) => (
+          <Image src={item.partner} key={item.id} />
         ))}
       </HStack>
       <Button color="white" bg="dark.100" mw={170} text="Learn More" />
