@@ -1,0 +1,158 @@
+{
+  "partners": [
+    {
+      "id": 1,
+      "partner": "/public/images/google.svg"
+    },
+    {
+      "id": 2,
+      "partner": "/public/images/microsoft.svg"
+    },
+    {
+      "id": 3,
+      "partner": "/public/images/airbnb.svg"
+    },
+    {
+      "id": 4,
+      "partner": "/public/images/facebook.svg"
+    },
+    {
+      "id": 5,
+      "partner": "/public/images/spotify.svg"
+    }
+  ],
+  "works": [
+    {
+      "id": 1,
+      "work": "/public/images/work1.svg"
+    },
+    {
+      "id": 2,
+      "work": "/public/images/work2.svg"
+    },
+    {
+      "id": 3,
+      "work": "/public/images/work3.svg"
+    },
+    {
+      "id": 4,
+      "work": "/public/images/work4.svg"
+    },
+    {
+      "id": 5,
+      "work": "/public/images/work5.svg"
+    },
+    {
+      "id": 6,
+      "work": "/public/images/work6.svg"
+    },
+    {
+      "id": 7,
+      "work": "/public/images/work7.svg"
+    },
+    {
+      "id": 8,
+      "work": "/public/images/work8.svg"
+    }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "plan": "Basic",
+      "price": 100,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam",
+      "benefits": [
+        {
+          "id": 1,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 2,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 3,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 4,
+          "benefit": "Lorem Ipsum, dolor sit"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "plan": "Plus",
+      "price": 250,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam",
+      "benefits": [
+        {
+          "id": 1,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 2,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 3,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 4,
+          "benefit": "Lorem Ipsum, dolor sit"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "plan": "Pro",
+      "price": 400,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam",
+      "benefits": [
+        {
+          "id": 1,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 2,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 3,
+          "benefit": "Lorem Ipsum, dolor sit"
+        },
+        {
+          "id": 4,
+          "benefit": "Lorem Ipsum, dolor sit"
+        }
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "thumbnail": "/public/images/person1.svg",
+      "name": "Peg Legge",
+      "role": "CEO"
+    },
+    {
+      "id": 1,
+      "thumbnail": "/public/images/person2.svg",
+      "name": "Richard Guerra",
+      "role": "CTO"
+    },
+    {
+      "id": 1,
+      "thumbnail": "/public/images/person3.svg",
+      "name": "Alexandra Stolz",
+      "role": "DESIGNER"
+    },
+    {
+      "id": 1,
+      "thumbnail": "/public/images/person4.svg",
+      "name": "Janet Bray",
+      "role": "DEVELOPER"
+    }
+  ]
+}

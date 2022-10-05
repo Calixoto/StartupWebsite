@@ -25,6 +25,7 @@ export function Button({
         maxW={mw}
         width="100%"
         py={3}
+        _hover={{ opacity: 0.75, transition: "0.2s linear" }}
       >
         {text}
       </ButtonChakra>

@@ -1,9 +1,23 @@
 import { Container, SimpleGrid } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { Button } from "../../components/Button";
 import { DescriptionCard } from "../../components/DescriptionCard";
-import { WorkCard } from "../../components/WorksCard";
+import { WorkCard, WorkProps } from "../../components/WorkCard";
+import { api } from "../../services/api";
 
 export function Portfolio() {
+  const [works, setWorks] = useState<WorkProps[]>([]);
+
+  async function requestWork() {
+    await api
+      .get("/works")
+      .then((response) => response.data)
+      .then((response) => setWorks(response));
+  }
+
+  useEffect(() => {
+    requestWork();
+  }, []);
   return (
     <Container
       maxW="xl"
@@ -20,8 +34,8 @@ export function Portfolio() {
         adipisicing elit."
       />
       <SimpleGrid columns={[1, 1, 2]} spacing={55}>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-          <WorkCard key={item} />
+        {works.map((item) => (
+          <WorkCard key={item.id} item={item} />
         ))}
       </SimpleGrid>
       <Button text="Learn More" mw={170} />

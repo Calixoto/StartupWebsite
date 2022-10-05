@@ -1,8 +1,22 @@
 import { Container, SimpleGrid } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { DescriptionCard } from "../../components/DescriptionCard";
-import { PlansCard } from "../../components/PlansCard";
+import { PlanProps, PlansCard } from "../../components/PlansCard";
+import { api } from "../../services/api";
 
 export function Plans() {
+  const [plans, setPlans] = useState<PlanProps[]>([]);
+
+  async function requestPlans() {
+    await api
+      .get("/plans")
+      .then((response) => response.data)
+      .then((response) => setPlans(response));
+  }
+
+  useEffect(() => {
+    requestPlans();
+  }, []);
   return (
     <Container
       maxW="xl"
@@ -20,8 +34,8 @@ export function Plans() {
 adipisicing elit."
       />
       <SimpleGrid columns={[1, 1, 3]} spacing={[50, 50, 4, 12, 105]}>
-        {[1, 2, 3].map((item) => (
-          <PlansCard key={item} />
+        {plans.map((plan) => (
+          <PlansCard item={plan} key={plan.id} />
         ))}
       </SimpleGrid>
     </Container>

@@ -2,7 +2,22 @@ import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 import { HiCheck } from "react-icons/hi";
 import { Button } from "../Button";
 
-export function PlansCard() {
+export interface PlanProps {
+  id: number;
+  plan: string;
+  price: number;
+  description: string;
+  benefits: {
+    id: number;
+    benefit: string;
+  }[];
+}
+
+interface PlansCardProps {
+  item: PlanProps;
+}
+
+export function PlansCard({ item }: PlansCardProps) {
   return (
     <Box
       display="flex"
@@ -21,7 +36,7 @@ export function PlansCard() {
           color="black"
           fontWeight="regular"
         >
-          Basic
+          {item.plan}
         </Text>
         <HStack align="center" justifyContent="center">
           <Text
@@ -30,7 +45,7 @@ export function PlansCard() {
             fontWeight="bold"
             color="black"
           >
-            $100
+            ${item.price}
           </Text>
           <Text
             fontSize="xs"
@@ -47,13 +62,12 @@ export function PlansCard() {
           fontWeight="regular"
           color="dark.50"
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
-          nemo hic quos, ab, dolor aperiam
+          {item.description}
         </Text>
       </VStack>
       <VStack align="left">
-        {[1, 2, 3, 4].map((item) => (
-          <HStack key={item} color="green.100" spacing={11}>
+        {item.benefits.map((benefit) => (
+          <HStack key={benefit.id} color="green.100" spacing={11}>
             <HiCheck size={25} />
             <Text
               fontSize="xs"
@@ -61,7 +75,7 @@ export function PlansCard() {
               fontWeight="regular"
               color="dark.100"
             >
-              Lorem ipsum, dolor sit{" "}
+              {benefit.benefit}
             </Text>
           </HStack>
         ))}
